@@ -21,8 +21,9 @@ class TitleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_title, container, false)
-        binding.playButton.setOnClickListener (
-                Navigation.createNavigateOnClickListener(R.id.action_titleFragment2_to_gameFragment))
+        binding.playButton.setOnClickListener {v: View ->
+            v.findNavController().navigate(TitleFragmentDirections.actionTitleFragment2ToGameFragment())
+        }
 
 //        Upar ka 2 line 👆👆👆👆 is a kotln specific application of the following code
 //        binding.playButton.setOnClickListener{view: View ->
